@@ -1,0 +1,13 @@
+Fights in Dead or Alive are based on a triangle system: strikes beat throws, throws beat holds, and holds beat strikes. When you land an attack of one type that beats another type, like landing a strike when an opponent tries to throw, that attack becomes a Hi Counter attack and does even more damage.
+
+Key Features
+
+Break Gauge System - A special attack meter new to the series. Use the Break Gauge to execute new tactics such as a Break Blow or a Break Hold.
+
+Break Blow - A Break Blow is a special skill which has a powerful smash while parrying an enemy strike.
+
+Break Hold - A Break Hold is the ultra hold which returns upper, middle, and lower attacks.
+
+Fatal Rush - Fatal Rush is a powerful combo attack of up to four neatly animated punches and kicks making a first time player look like an expert.
+
+Danger Zones - These are special regions found in most stages that cause heavy damage when a fighter gets knocked into them. Danger Zones can range from basic walls to blockbuster explosions and careening cars. Some stages also have Danger Zones within the floors as well.
