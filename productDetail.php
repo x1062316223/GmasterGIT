@@ -24,7 +24,7 @@
 		
 			<div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
 					<div class="col-md-6 mb-4 mt-5">
-						<img src="images/products/<?php echo $row6["ID"];?>.jpg" alt=""/>
+						<img src="images/products/<?php echo $row6["ID"];?>.jpg" alt="" style = "width: 60%"></img>
 						</div>
 									<div class="col-md-6 mb-auto">
 						<div style="width: 60%">

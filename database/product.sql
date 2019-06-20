@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2019 at 05:08 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Generation Time: May 31, 2019 at 01:47 AM
+-- Server version: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -21,6 +19,80 @@ SET time_zone = "+00:00";
 --
 -- Database: `product`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pc`
+--
+
+CREATE TABLE `pc` (
+  `ID` int(110) NOT NULL,
+  `Name` varchar(500) NOT NULL,
+  `Genre` varchar(300) NOT NULL,
+  `Price` int(110) NOT NULL,
+  `Number` int(110) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pc`
+--
+
+INSERT INTO `pc` (`ID`, `Name`, `Genre`, `Price`, `Number`) VALUES
+(1, 'Control', 'Action & Adventure', 139, 50),
+(2, 'Anthem', 'Shooter', 89, 23),
+(3, 'Biomutant', 'Action & Adventure', 89, 43),
+(4, 'Darksiders 3', 'Action & Adventure', 89, 22),
+(5, 'Farming Simulator 19', 'Simulation', 49, 55),
+(6, 'Fallout 76', 'Role Playing Game', 69, 33),
+(7, 'Battlefield V', 'Shooter', 69, 26),
+(8, 'Call of Duty Black Ops 4 Mystery Box Edition', 'Shooter', 279, 99),
+(9, 'World of Warcraft: Battle for Azeroth Collector\'s Edition', 'Massively Multiplayer ', 129, 99),
+(10, 'Crash Bandicoot N. Sane Trilogy', 'Platform', 69, 20),
+(11, 'Vampyr', 'Role Playing Game', 69, 26),
+(12, 'The Elder Scrolls Online: Summerset', 'Massively Multiplayer Online', 69, 36),
+(13, 'Final Fantasy XV Windows Edition', 'Role Playing Game', 69, 29),
+(14, 'Flight Sim World', 'Flight', 39, 29),
+(15, 'The Sims 4 Bundle', 'Simulation', 49, 35),
+(16, 'Binary Domain', 'Shooter', 15, 32);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ps4`
+--
+
+CREATE TABLE `ps4` (
+  `ID` int(100) NOT NULL,
+  `Name` varchar(300) NOT NULL,
+  `Genre` varchar(500) NOT NULL,
+  `Price` int(100) NOT NULL,
+  `Number` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ps4`
+--
+
+INSERT INTO `ps4` (`ID`, `Name`, `Genre`, `Price`, `Number`) VALUES
+(1, 'Skull & Bones', 'Action & Adventure', 80, 3),
+(2, 'Star Wars Jedi Fallen Order', 'Action & Adventure', 99, 15),
+(3, 'The Last of Us Part II', 'Action & Adventure', 70, 12),
+(4, 'Beyond Good & Evil 2', 'Action & Adventure', 89, 6),
+(5, 'DOOM Eternal', 'Shooter', 89, 29),
+(6, 'Rage 2', 'Shooter', 99, 15),
+(7, 'Starfield', 'Action & Adventure', 129, 40),
+(8, 'Ghost of Tsushima', 'Action & Adventure', 99, 20),
+(9, 'Babylon\'s Fall', 'Action & Adventure', 89, 22),
+(10, 'Wolfenstein: Youngblood', 'Shooter', 119, 20),
+(11, 'The Elder Scrolls VI', 'Role Playing Game', 89, 20),
+(12, 'Dead or Alive 6', 'Fighting', 89, 30),
+(13, 'Cyberpunk 2077', 'Role Playing Game', 80, 20),
+(14, 'Dying Light 2', 'Action & Adventure', 89, 22),
+(15, 'Genesis Alpha One', 'Strategy', 69, 33),
+(16, 'Code Vein', 'Role Playing Game', 79, 45),
+(17, 'Tom Clancy\'s The Division 2 Dark Zone Collector\'s Edition', 'Shooter', 179, 50),
+(18, 'Anthem: Legion of Dawn Edition', 'Shooter', 169, 39);
 
 -- --------------------------------------------------------
 
@@ -75,8 +147,8 @@ INSERT INTO `p_list` (`id`, `name`, `description`, `price`, `gener`, `type`, `nu
 (30, 'The Elder Scrolls Online Summerset', 'The Elder Scrolls Online: Summerset is the next Chapter of ZeniMax Online Studios?award-winning online RPG, The Elder Scrolls Online (ESO). This new adventure in the ESO saga will send adventurers and their friends to the Summerset Isle, to visit and explore the ancestral home of the high elves for the first time since 1994? The Elder Scrolls: Arena. Players will also be able to explore the island of Artaeum, home to the mysterious Psijic Order, a group of sages that predate the Mages Guild. Tamriel? fate hangs in the balance and the heroes of ESO are called upon to save the world once more.\r\n\r\nThis year? Chapter introduces an enormous and stunning new zone unlike any other, a fresh skill line with new magical powers to master, an expanded crafting system to forge powerful gear, and the continuation of the epic and award-winning ESO story. With more than 30 hours of new story content to experience, The Elder Scrolls Online: Summerset expands The Elder Scrolls Online in exciting and innovative ways, offering incredible adventures for both ESO veterans and those new to the game.\r\n\r\nKey Features\r\n\r\nA New Elder Scrolls Online Chapter For Everyone - The Elder Scrolls Online: Summerset builds on ESO? Chapter structure introduced last year with ESO: Morrowind. Chapters deliver massive amounts of new content and features that are equally accessible and fun for both existing and new ESO players.\r\n\r\nNew Players: New players can jump right into The Elder Scrolls Online: Summerset and start a character in a fresh tutorial and starter area, without needing to play previous ESO content. Since the original base game is included with The Elder Scrolls Online: Summerset, new players also have access to hundreds of hours of additional adventures throughout Tamriel. New players get immediate access to the full base game with any Summerset digital pre-purchase.\r\n\r\nExisting Players: ESO veterans will be able to upgrade and take their existing hero to Summerset to begin new adventures. No matter their level, existing characters will find level-appropriate content from the moment they step into Summerset.\r\n\r\nHaven? played ESO in a while?: The Elder Scrolls Online: Summerset is a best chance to jump back into ESO and continue adventures or start anew. Players only need to reinstall the game, log in, and start playing again.\r\n\r\nJourney to the Mysterious Summerset - Summerset is a massive new zone filled with new characters, stories, landmarks, and adventures. Players will traverse a stunning landscape fill with tropical lagoons, forests bursting with vibrant colors, and grand cliffside vistas while visiting massive and gorgeous manicured cities that reflect the sophisticated tastes of the High Elves.\r\n\r\nAn All New Skill Line -- Join the Psijic Order - The secretive Psijic Order, the precursor to the Mages Guild seen in other Elder Scrolls games, makes an appearance in The Elder Scrolls Online: Summerset. For the first time ever, the player will be able to travel to their home island of Artaeum and join the ranks of these mysterious mages to gain access to their mystical powers, unlocking powerful new abilities.\r\n\r\nMore Incredible Elder Scrolls Stories - Continuing the epic meta-story that began in 2015 with the Orsinium DLC Game Pack, players will once again face the Daedric conspiracy that threatens to destroy all of Tamriel. At the behest of Queen Ayrenn, who has opened Summerset to foreigners by royal decree, players will embark on a sweeping adventure to rejoin the infamous Khajiit spy Razum-dar, meet the mighty sages of the Crystal Tower, and fight for Tamriel? fate once more. Amongst the beauty of the ancestral home of the High Elves, shadows rise and rumors spread of strange disappearances. A corrupting influence works to destroy High Elf society from within, and now, whispers stir of Daedric followers organizing in the shadows.\r\n\r\nExpanded Crafting System ?Jewelry Crafting - The Elder Scrolls Online: Summerset introduces one of players?most requested features, an all-new crafting ability ?Jewelry Crafting. Players will be able to forge potent new gear to bolster their power for their new adventures, leveraging their experience and resources to gain every advantage to succeed on their quest.\r\n\r\nNew Group Activities - Band together with friends to conquer new challenges, including a new Trial, Delves, Group Events, and more', 79, 'massively multiplayer online', 'pc', 59),
 (31, 'The Sims 4 Bundle', 'Add more ways to play with The Sims?4 Bundle ?Includes 1 Game Pack and 2 Stuff Packs! Explore a jungle adventure and take back some culture, get a good workout by scaling the rock climbing treadmill, and give your toddlers a new ways to express themselves!\r\n\r\nAdd more ways to play in The Sims?4 ?Includes 1 Game Pack and 2 Stuff Packs:\r\n\r\nThe Sims?4 Jungle Adventure\r\nThe Sims?4 Fitness Stuff\r\nThe Sims?4 Toddler Stuff\r\nThe Sims?4 Jungle Adventure - Take your Sims on a mysterious adventure into the wild and discover a new culture with The Sims?4 Jungle Adventure. Explore a unique wilderness landscape, revealing a temple, jungle obstacles, cursed relics and treasures. Experience the culture and customs of Selvadorada, from devouring local eats to learning spicy new dance moves!\r\n\r\nThe Sims?4 Fitness Stuff - Elevate your Sim? fitness and embody an active lifestyle with The Sims?4 Fitness Stuff*. Challenge your Sims to scale the rock climbing treadmill as a fun way to burn energy and improve their physique. Choose from a collection of fashionable activewear, and decorate your Sim? home with nature-inspired objects and d?or.\r\n\r\nThe Sims?4 Toddler Stuff - Give your toddlers new ways to express their personalities, burn off energy, and make friends with The Sims?4 Toddler Stuff. Dress your little Sims in a variety of adorable outfits and cute hairstyles. Use colorful d?or to build an outdoor play space where toddlers can enjoy the slide, crawling tunnels, and ball pit with friends. ', 69, 'simulation', 'pc', 66),
 (32, 'Vampyr', 'Prowl the disease ridden streets in Vampyr - a darkly atmospheric Action/RPG from the studio behind \"Remember Me\" and \"Life is Strange\", developed using Unreal Engine 4.\r\n\r\nSet in early 20th century Britain during a bout of the lethal Spanish ?u, the streets of London are crippled by disease, violence and fear. In a completely disorganized and ghostly city, those who are either fools, desperate, or unlucky enough to walk the streets lay prey to Britain? most elusive predators: the Vampires.\r\n\r\nEmerging from the chaos, a tormented ?gure awakes; as the player it is you who determines how to harness your new powers, by specializing in deadly, versatile RPG skill-trees that change the way you play.\r\n\r\nRecently turned into a Vampire, an eminent doctor tries to understand his new af?iction. His quest of intuition, discoveries and struggles, will be ?lled with death and drama, while he attempts to stem the irrepressible thirst that constantly drives him to take human lives.\r\n\r\nAs you cling to what  remains of your humanity,  your decisions will ultimately shape the fate of your hero while searching for answers in the coughing, foggy aftermath of the Spanish Flu.\r\n\r\nKey Features\r\n\r\nExplore a darkly atmospheric early 20th century London during the worst plague in human history.\r\n\r\nPlay a tormented and powerful Vampire learning the rules of his new condition.  A man of science, a beast of the night:  Your toughest battles will be within yourself.\r\n\r\nBuild your own combat style through a wide range of crafted weapons and powerful Vampire abilities to defeat a large and unique bestiary.\r\n\r\nChoose your fate: Moral choices will shape the story ?how human could a Vampire be, when he must feed?\r\n\r\nFeed to sustain yourself by hunting human prey: your choices will shape the way you evolve, the story and inevitably affect the lives of London? survivors. In your hands lie their future?', 99, 'RPG', 'pc', 199),
-(33, 'Anthem: Legion of Dawn Edition', 'The Anthem?? Legion of Dawn Edition gives you:\r\n\r\nThe complete set of Legion of Dawn Armor Packs (Ranger, Colossus, Storm and Interceptor)\r\nLegendary weapon\r\nJavelin gear attachment\r\nDigital soundtrack\r\nFounders player banner\r\nVIP access to pre-launch demos\r\n\r\n\r\nIn Anthem? a new game from EA\'s BioWare studio, explore a landscape of primeval beauty, confront the dangers you find, and grow in power with every step.\r\n\r\nYour power grows with every step into the unknown. Whether plunder, revenge, or glory lures you onward, your choices will irrevocably change you?nd the world around you.\r\n\r\nKey Features\r\n\r\nVenture into danger - In this shared-world action-RPG, you and your friends are Freelancers?he bold few with the courage to leave civilization behind, explore a landscape of primeval beauty, and confront the dangers you find.\r\n\r\nUnite with friends - Up to four players band together to take on whatever perils you discover as a heroic team. As your friends support you in your journey, so do your victories and rewards benefit your friends.\r\n\r\nRise to any challenge - Wield an arsenal of Javelin exosuits, each equipped with unique weapons and abilities. Customize them with gear you earn and craft, then use them to fly, leap, and climb through a contiguous open world.\r\n\r\nChart your path - Experience massive, world-altering occurrences like Shaper Storms. Fight savage beasts and ruthless marauders. Delve forgotten ruins as you seek to defeat the forces plotting to conquer humanity.\r\n\r\nControl your fate - Your power grows with every step into the unknown. Whether plunder, revenge, or glory lures you onward, your choices will irrevocably change you?nd the world around you.', 69, 'shooter', 'ps4', 20),
-(34, 'Babylon\'s Fall', 'BABYLON? FALL?is a brand-new, ground breaking project being developed in partnership with PlatinumGames Inc.', 39, 'action', 'ps4', 40),
+(33, 'Legion of Dawn Edition', 'The Anthem?? Legion of Dawn Edition gives you:\r\n\r\nThe complete set of Legion of Dawn Armor Packs (Ranger, Colossus, Storm and Interceptor)\r\nLegendary weapon\r\nJavelin gear attachment\r\nDigital soundtrack\r\nFounders player banner\r\nVIP access to pre-launch demos\r\n\r\n\r\nIn Anthem? a new game from EA\'s BioWare studio, explore a landscape of primeval beauty, confront the dangers you find, and grow in power with every step.\r\n\r\nYour power grows with every step into the unknown. Whether plunder, revenge, or glory lures you onward, your choices will irrevocably change you?nd the world around you.\r\n\r\nKey Features\r\n\r\nVenture into danger - In this shared-world action-RPG, you and your friends are Freelancers?he bold few with the courage to leave civilization behind, explore a landscape of primeval beauty, and confront the dangers you find.\r\n\r\nUnite with friends - Up to four players band together to take on whatever perils you discover as a heroic team. As your friends support you in your journey, so do your victories and rewards benefit your friends.\r\n\r\nRise to any challenge - Wield an arsenal of Javelin exosuits, each equipped with unique weapons and abilities. Customize them with gear you earn and craft, then use them to fly, leap, and climb through a contiguous open world.\r\n\r\nChart your path - Experience massive, world-altering occurrences like Shaper Storms. Fight savage beasts and ruthless marauders. Delve forgotten ruins as you seek to defeat the forces plotting to conquer humanity.\r\n\r\nControl your fate - Your power grows with every step into the unknown. Whether plunder, revenge, or glory lures you onward, your choices will irrevocably change you?nd the world around you.', 69, 'shooter', 'ps4', 20),
+(34, 'Babylon_s Fall', 'BABYLON? FALL?is a brand-new, ground breaking project being developed in partnership with PlatinumGames Inc.', 39, 'action', 'ps4', 40),
 (35, 'Beyond Good _ Evil 2', 'Beyond Good & Evil 2 marks the return of one of Ubisoft? most beloved games. The prequel will transport players into a profoundly multicultural world, capturing the spirit of the original with unforgettable characters, grandiose decors and intense dramas that play out across a vast universe. Players will rise from lowly pirate to legendary captain at the helm of massive star-faring vessels, adventuring alongside crews of unforgettable characters to fight for freedom and theright to determine their own fate among the stars. Ubisoft Montpellier will be developing the game alongside its community of fans.\r\n\r\nFight alongside unforgettable characters in a stunning new solar system, as you struggle for freedom and the right to determine your own fate among the stars.\r\n\r\nPlay the adventure by yourself or with friends in a vast and seamless online playground.', 55, 'action', 'ps4', 69),
 (36, 'Code Vein', 'In the not too distant future, a mysterious disaster has brought collapse to the world, as we know it. Towering skyscrapers, once symbols of prosperity, are now lifeless graves of humanity? past pierced by the Thorns of Judgment. At the center of the destruction lies a hidden society of Revenants called Vein. This final stronghold is where the remaining few fight to survive, blessed with Gifts of power in exchange for their memories and a thirst for blood. Give into the bloodlust fully and risk becoming one of the Lost, fiendish ghouls devoid of any remaining humanity.\r\n\r\nIn this challenging action-RPG, CODE VEIN finds players assuming the role of a Revenant. After stumbling into Vein, players are tasked to embark into the world with a companion picked from the various residents of Vein to uncover lost memories and an exit out of this new demented reality. The world of CODE VEIN is dangerous, full of vicious enemies and monstrous bosses to put players?combat skills to the test\r\n\r\nRevenants also have access to Blood Veils, devices capable of draining the blood of their enemies in order to enhance their own abilities. Exploiting these enhanced abilities known as Gifts, players can change their form to increase their strength, weaken enemies, and utilize new weapon abilities with overpowered attacks. Utilizing the vast array of weaponry along with each character? Gift, players can adapt and strategize to a variety of battle conditions that suit their play styles.', 46, 'RPG', 'ps4', 23),
 (37, 'Cyberpunk 2077', 'Night City, California. Year 2077.\r\n\r\nThe world is broken. MegaCorps manage every aspect of life from the top floors of their sky-scraping fortresses. Down below, the streets are run by drug pushing gangs, tech hustlers, and illegal braindance slingers. The in-between is where decadence, sex and pop culture mix with violent crime, extreme poverty and the unattainable promise of the American Dream.\r\n\r\nYou are V, a cyberpunk. In a world of cyberenhanced street warriors, tech-savvy netrunners and corporate life-hackers, today is your first step to becoming an urban legend.', 59, 'RPG', 'ps4', 66),
@@ -98,35 +170,98 @@ INSERT INTO `p_list` (`id`, `name`, `description`, `price`, `gener`, `type`, `nu
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `registered`
+--
+
+CREATE TABLE `registered` (
+  `id` int(200) NOT NULL,
+  `user_name` varchar(500) NOT NULL,
+  `full_name` varchar(500) NOT NULL,
+  `email_address` varchar(500) NOT NULL,
+  `phone_number` int(200) NOT NULL,
+  `address` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `id` int(120) NOT NULL,
   `email` varchar(120) NOT NULL,
   `password` varchar(120) NOT NULL,
   `firstname` varchar(120) NOT NULL,
   `lastname` varchar(120) NOT NULL,
-  `address` text NOT NULL
+  `address` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `xbox`
+--
+
+CREATE TABLE `xbox` (
+  `ID` int(100) NOT NULL,
+  `Name` varchar(500) NOT NULL,
+  `Genre` varchar(300) NOT NULL,
+  `Price` int(100) NOT NULL,
+  `Number` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `xbox`
 --
 
-INSERT INTO `user` (`id`, `email`, `password`, `firstname`, `lastname`, `address`) VALUES
-(4, 'admin', '$2y$10$MA3I5WuaSGfgcXr1FHCGKuhZ7UgtHmYtDlGdPUUN1rPfOfHrzxHu.', 'glade', 'xia', ''),
-(5, 'admin', '$2y$10$6JRNrZF0Yqa61bRFHG/tVuQ1A.AwhvTugWC5ghXGXqjy/D3P9J65i', 'glade', 'xia', '');
+INSERT INTO `xbox` (`ID`, `Name`, `Genre`, `Price`, `Number`) VALUES
+(1, '8-Bit Armies', 'Strategy, Video Games', 55, 20),
+(2, 'Valkyria Chronicles 4', 'Role Playing', 119, 60),
+(3, 'FIFA 19 Champions Edition', 'Sport\r\n', 129, 99),
+(4, 'Friday the 13th Ultimate Slasher Edition', 'Action, Video Games, Horror', 69, 35),
+(5, 'The Long Dark Day One Edition', 'Simulation, Video Games', 49, 55),
+(6, 'Dakar 18 Day One Edition', 'Racing, Simulation, Video Games', 99, 29),
+(7, 'Slime Rancher', 'Simulation', 49, 49),
+(8, 'Mega Man 11', 'Adventure', 49, 45),
+(9, 'Odyssey Gold Edition', 'Action', 169, 55),
+(10, ' Eternal Collection', 'Role Playing, Video Games', 77, 26),
+(11, 'Train Sim World', 'Simulation', 69, 35),
+(12, 'Far Cry 3', 'Shooter', 59, 55),
+(13, 'Super Bomberman R Shiny Edition', 'Action', 49, 55),
+(14, 'Vampyr', 'Action', 59, 20),
+(15, 'Conan Exiles', 'Adventure', 60, 19),
+(16, 'Assassin\'s Creed Rogue Remastered', 'Adventure', 30, 80),
+(17, 'Burnout Paradise Remastered', 'Racing\r\n', 20, 70);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `pc`
+--
+ALTER TABLE `pc`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `ps4`
+--
+ALTER TABLE `ps4`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `p_list`
 --
 ALTER TABLE `p_list`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `registered`
+--
+ALTER TABLE `registered`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id_number` (`id`);
 
 --
 -- Indexes for table `user`
@@ -139,18 +274,30 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `pc`
+--
+ALTER TABLE `pc`
+  MODIFY `ID` int(110) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `ps4`
+--
+ALTER TABLE `ps4`
+  MODIFY `ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+--
 -- AUTO_INCREMENT for table `p_list`
 --
 ALTER TABLE `p_list`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
-
+--
+-- AUTO_INCREMENT for table `registered`
+--
+ALTER TABLE `registered`
+  MODIFY `id` int(200) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-COMMIT;
-
+  MODIFY `id` int(120) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

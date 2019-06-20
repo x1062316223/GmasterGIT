@@ -34,13 +34,56 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="js/accountJS.js"></script>
-<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<style>
-.fakeimg {
-	height: 200px;
-	background: #aaa;
-}
+	<style>
+#product-list{float:left;list-style:none;margin-top:-3px;padding:0;width:190px;position: absolute;}
+#product-list li{padding: 10px; background: #f0f0f0; border-bottom: #bbb9b9 1px solid;}
+#product-list li:hover{background:#ece3d2;cursor: pointer;}
+#search-box{padding: 10px;border: #a8d4b1 1px solid;border-radius:4px;}
 </style>
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script>
+function showHint(str) {
+    if (str.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "gethint.php?q="+str, true);
+        xmlhttp.send();
+    }
+}
+        
+</script>
+<script>
+$(document).ready(function(){
+	$("#search").keyup(function(){
+		$.ajax({
+		type: "POST",
+		url: "ReadProducts.php",
+		data:'keyword='+$(this).val(),
+		beforeSend: function(){
+			$("#search-box").css("background","#FFF");
+		},
+		success: function(data){
+			$("#suggesstion-box").show();
+			$("#suggesstion-box").html(data);
+			$("#search-box").css("background","#FFF");
+		}
+		});
+	});
+});
+
+function selectProduct(val) {
+$("#search-box").val(val);
+$("#suggesstion-box").hide();
+}
+</script>
+    
 </head>
 <body>
 	<!-- https://www.tutorialspoint.com/php/php_login_example.htm     https://www.youtube.com/watch?v=Jtw1tjk-tdo-->
@@ -57,10 +100,16 @@
       <li class="nav-item mr-sm-2"> <a class="nav-link" href="xbox.php">XBOX</a> </li>
     </ul>
     <!-- Search Form -->
-					<form class="form-inline my-2 my-lg-0 mr-0" method="post" action="search.php">
-          				<input class="form-control mr-sm-2" type = "text" name = "search" placeholder="Search" aria-label="Search" id="search">
+	  <div class="frmSearch">
+		  <form class="form-inline" method="post" action="search.php">
+          				<input class="form-control form-inline"type = "text" name = "search" placeholder="Search" aria-label="Search" id="search" >
           				<button class="btn btn-outline-success my-2 my-sm-0 mr-sm-2" type="submit"><span class="fa fa-search"></span></button>
-        			</form>
+			  </form>
+                        <div id="suggesstion-box"></div>
+	  </div>    
+      <!-- Shopping Cart-->
+
+
 	  <?php
     
                 //check user input with database to find if user is exist and password is correct
@@ -99,7 +148,7 @@
         <!-- display this when user logged in -->
        <ul class="nav navbar-nav flex-row" id = "accountProfile">
            <li class="dropdown order-1">
-                      <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle"> <span class="oi oi-person"></span></button>
+                      <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle"><i class="fas fa-user"></i></button>
                       <ul class="dropdown-menu dropdown-menu-right mt-2">
                          <li class="px-3 py-2">
                              <form class="form" role="form" style="width: 200px"  action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post">

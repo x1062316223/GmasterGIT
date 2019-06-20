@@ -104,8 +104,8 @@ include 'header.php';
 				<p class="card-text">$
 					<?php echo $row4["price"];?>
 				</p><br>
-				<div class="btn btn-primary">+ <i class="fa fa-shopping-cart"></i>
-				</div>
+				<button class="btn btn-primary" name="add_to_cart" id = "<?php echo $row4["id"];?>">+ <i class="fa fa-shopping-cart"></i>
+				</button>
 			</div>
 
 		</div>
